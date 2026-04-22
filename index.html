@@ -10,123 +10,573 @@
   <div class="container">
     <div class="form-card">
       <div class="header">
-        <h1>Questionário de Riscos Psicossociais</h1>
+        <h1>SEGTRA</h1>
+        <p>Questionário NR-01</p>
+        <div class="step-indicator">
+          <span class="step active" data-step="1">1</span>
+          <span class="step" data-step="2">2</span>
+          <span class="step" data-step="3">3</span>
+          <span class="step" data-step="4">4</span>
+          <span class="step" data-step="5">5</span>
+          <span class="step" data-step="6">6</span>
+        </div>
       </div>
 
       <form id="form">
-        <div class="question-item">
-          <label class="question-label">A carga de trabalho que você enfrenta no seu dia-a-dia é excessiva?</label>
-          <select name="risco1" required>
-            <option value="">Selecione</option>
-            <option value="1">Nunca</option>
-            <option value="2">Raramente</option>
-            <option value="3">Às vezes</option>
-            <option value="4">Frequentemente</option>
-            <option value="5">Sempre</option>
-          </select>
+        <!-- Etapa 1: Dados Pessoais -->
+        <div class="step-content active" data-step="1">
+          <div class="question-item">
+            <label class="question-label">Nome completo</label>
+            <input type="text" name="nome" required>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">CPF</label>
+            <input type="text" name="cpf" required placeholder="000.000.000-00" maxlength="14" id="cpf">
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Telefone (opcional)</label>
+            <input type="tel" name="telefone" placeholder="(00) 00000-0000" maxlength="15" id="telefone">
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">E-mail</label>
+            <input type="email" name="email" required placeholder="seu@email.com">
+          </div>
+
+          <button type="button" class="btn-submit next-btn">Próximo</button>
         </div>
 
-        <div class="question-item">
-          <label class="question-label">Você sente que tem autonomia suficiente para tomar decisões no seu trabalho?</label>
-          <select name="risco2" required>
-            <option value="">Selecione</option>
-            <option value="1">Nunca</option>
-            <option value="2">Raramente</option>
-            <option value="3">Às vezes</option>
-            <option value="4">Frequentemente</option>
-            <option value="5">Sempre</option>
-          </select>
+        <!-- Etapa 2: Questionário 1 -->
+        <div class="step-content" data-step="2">
+          <h3 class="section-title">Questionário de Riscos Psicossociais</h3>
+
+          <div class="question-item">
+            <label class="question-label">A carga de trabalho que você enfrenta no seu dia-a-dia é excessiva?</label>
+            <select name="risco1" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Você sente que tem autonomia suficiente para tomar decisões no seu trabalho?</label>
+            <select name="risco2" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Você sente que pode contar com os colegas e supervisores quando precisa de apoio?</label>
+            <select name="risco3" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Existe um clima de respeito e colaboração entre você e seus colegas de trabalho?</label>
+            <select name="risco4" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Você sente que seu esforço e desempenho são reconhecidos adequadamente?</label>
+            <select name="risco5" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="button-group">
+            <button type="button" class="btn-submit prev-btn">Voltar</button>
+            <button type="button" class="btn-submit next-btn">Próximo</button>
+          </div>
         </div>
 
-        <div class="question-item">
-          <label class="question-label">Você sente que pode contar com os colegas e supervisores quando precisa de apoio?</label>
-          <select name="risco3" required>
-            <option value="">Selecione</option>
-            <option value="1">Nunca</option>
-            <option value="2">Raramente</option>
-            <option value="3">Às vezes</option>
-            <option value="4">Frequentemente</option>
-            <option value="5">Sempre</option>
-          </select>
+        <!-- Etapa 3: Questionário 2 -->
+        <div class="step-content" data-step="3">
+          <h3 class="section-title">Avaliação dos Riscos Psicossociais - Modelo de Likert</h3>
+
+          <div class="question-item">
+            <label class="question-label">O seu trabalho exige que você lide com emoções intensas ou difíceis com frequência?</label>
+            <select name="risco6" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Você sente que as recompensas (salário, benefícios, reconhecimento) são proporcionais ao esforço que você dedica ao trabalho?</label>
+            <select name="risco7" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">As condições físicas do seu ambiente de trabalho são adequadas para o desempenho das suas atividades?</label>
+            <select name="risco8" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Você se sente fisicamente exausto após o trabalho?</label>
+            <select name="risco9" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Você sente que tem clareza sobre suas responsabilidades no trabalho?</label>
+            <select name="risco10" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="button-group">
+            <button type="button" class="btn-submit prev-btn">Voltar</button>
+            <button type="button" class="btn-submit next-btn">Próximo</button>
+          </div>
         </div>
 
-        <div class="question-item">
-          <label class="question-label">Existe um clima de respeito e colaboração entre você e seus colegas de trabalho?</label>
-          <select name="risco4" required>
-            <option value="">Selecione</option>
-            <option value="1">Nunca</option>
-            <option value="2">Raramente</option>
-            <option value="3">Às vezes</option>
-            <option value="4">Frequentemente</option>
-            <option value="5">Sempre</option>
-          </select>
+        <!-- Etapa 4: Questionário 3 -->
+        <div class="step-content" data-step="4">
+          <h3 class="section-title">Questionário de Fatores Psicossociais</h3>
+
+          <div class="question-item">
+            <label class="question-label">Com que frequência você tem prazos curtos ou tarefas em excesso para realizar?</label>
+            <select name="risco11" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Você tem uma ideia clara do que se espera de você no trabalho?</label>
+            <select name="risco12" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">A falta de recursos ou apoio afeta seu desempenho no trabalho?</label>
+            <select name="risco13" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Com que frequência você se sente pressionado a realizar suas atividades dentro de prazos apertados?</label>
+            <select name="risco14" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Você enfrenta frequentemente conflitos com colegas de trabalho ou supervisores?</label>
+            <select name="risco15" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="button-group">
+            <button type="button" class="btn-submit prev-btn">Voltar</button>
+            <button type="button" class="btn-submit next-btn">Próximo</button>
+          </div>
         </div>
 
-        <div class="question-item">
-          <label class="question-label">Você sente que seu esforço e desempenho são reconhecidos adequadamente?</label>
-          <select name="risco5" required>
-            <option value="">Selecione</option>
-            <option value="1">Nunca</option>
-            <option value="2">Raramente</option>
-            <option value="3">Às vezes</option>
-            <option value="4">Frequentemente</option>
-            <option value="5">Sempre</option>
-          </select>
+        <!-- Etapa 5: Questionário 4 -->
+        <div class="step-content" data-step="5">
+          <h3 class="section-title">Organização do Trabalho e Controle Psicossocial</h3>
+
+          <div class="question-item">
+            <label class="question-label">Você tem autonomia para decidir como executar suas tarefas no trabalho?</label>
+            <select name="risco16" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Você é consultado ou pode opinar sobre decisões que afetam seu trabalho?</label>
+            <select name="risco17" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Seu superior imediato oferece apoio quando você enfrenta dificuldades no trabalho?</label>
+            <select name="risco18" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Você se sente reconhecido pelo trabalho que realiza?</label>
+            <select name="risco19" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Seu trabalho permite manter um equilíbrio saudável entre vida pessoal e profissional?</label>
+            <select name="risco20" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="button-group">
+            <button type="button" class="btn-submit prev-btn">Voltar</button>
+            <button type="button" class="btn-submit next-btn">Próximo</button>
+          </div>
         </div>
 
-        <button type="submit" class="btn-submit">Enviar</button>
+        <!-- Etapa 6: Questionário 5 -->
+        <div class="step-content" data-step="6">
+          <h3 class="section-title">Avaliação de Estresse e Riscos Psicossociais</h3>
+
+          <div class="question-item">
+            <label class="question-label">Com que frequência você se sente sobrecarregado com as tarefas no trabalho?</label>
+            <select name="risco21" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Você se sente inseguro(a) sobre seu futuro no trabalho?</label>
+            <select name="risco22" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Você sente que há uma pressão constante para atingir resultados específicos?</label>
+            <select name="risco23" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Você recebe feedback regular e construtivo sobre o seu desempenho?</label>
+            <select name="risco24" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="question-item">
+            <label class="question-label">Você sente que há ambiguidade ou falta de clareza nas suas tarefas e responsabilidades?</label>
+            <select name="risco25" required>
+              <option value="">Selecione</option>
+              <option value="1">Nunca</option>
+              <option value="2">Raramente</option>
+              <option value="3">Às vezes</option>
+              <option value="4">Frequentemente</option>
+              <option value="5">Sempre</option>
+            </select>
+          </div>
+
+          <div class="button-group">
+            <button type="button" class="btn-submit prev-btn">Voltar</button>
+            <button type="submit" class="btn-submit">Enviar</button>
+          </div>
+        </div>
       </form>
 
       <div class="footer">
-        NR-01 - Disposições Gerais e Gerenciamento de Riscos Ocupacionais
+        <p><strong>SEGTRA</strong></p>
+        <p>NR-01 - Disposições Gerais e Gerenciamento de Riscos Ocupacionais</p>
       </div>
     </div>
   </div>
 
-  <script>
-    const url = "https://script.google.com/macros/s/AKfycbwzlx8_bBPt6YuaK7kTl8-i3ui4nvr9pf6e4ERlEEYP1yoQkSWQQKhEDxnkISsP7TfC/exec";
+  <!-- Modal de carregamento -->
+  <div class="modal-overlay" id="loadingModal">
+    <div class="modal-content">
+      <div class="spinner"></div>
+      <p class="modal-text">Enviando...</p>
+    </div>
+  </div>
 
+  <script>
+    const url = "https://script.google.com/macros/s/AKfycbxxzTIlDyIHcnkDRQKvnNqiytKS6Z_3DP0VOBMZvoy4DMHSTM_4GMUxbOS5E3o_XkoEDw/exec";
+    let currentStep = 1;
+
+    // Máscara CPF
+    document.getElementById('cpf').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 11) value = value.slice(0, 11);
+      
+      value = value.replace(/(\d{3})(\d)/, '$1.$2');
+      value = value.replace(/(\d{3})(\d)/, '$1.$2');
+      value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+      
+      e.target.value = value;
+    });
+
+    // Máscara Telefone
+    document.getElementById('telefone').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 11) value = value.slice(0, 11);
+      
+      if (value.length > 0) {
+        value = '(' + value;
+      }
+      if (value.length > 3) {
+        value = value.slice(0, 3) + ') ' + value.slice(3);
+      }
+      if (value.length > 10) {
+        value = value.slice(0, 10) + '-' + value.slice(10);
+      }
+      
+      e.target.value = value;
+    });
+
+    // Navegação entre etapas
+    document.querySelectorAll('.next-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (validateStep(currentStep)) {
+          goToStep(currentStep + 1);
+        }
+      });
+    });
+
+    document.querySelectorAll('.prev-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        goToStep(currentStep - 1);
+      });
+    });
+
+    function goToStep(step) {
+      document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
+
+      document.querySelector(`.step-content[data-step="${step}"]`).classList.add('active');
+      document.querySelector(`.step[data-step="${step}"]`).classList.add('active');
+
+      currentStep = step;
+    }
+
+    function validateStep(step) {
+      const currentStepEl = document.querySelector(`.step-content[data-step="${step}"]`);
+      const requiredFields = currentStepEl.querySelectorAll('[required]');
+      let isValid = true;
+
+      requiredFields.forEach(field => {
+        if (!field.value) {
+          isValid = false;
+          field.style.borderColor = '#dc3545';
+        } else {
+          field.style.borderColor = '#e0e0e0';
+        }
+      });
+
+      if (!isValid) {
+        showAlert("Preencha todos os campos obrigatórios", "error");
+      }
+
+      return isValid;
+    }
+
+    // Envio do formulário
     document.getElementById("form").addEventListener("submit", async function(e) {
       e.preventDefault();
+
+      if (!validateStep(6)) return;
 
       const formData = new FormData(this);
       const data = Object.fromEntries(formData.entries());
 
-      const valores = [data.risco1, data.risco2, data.risco3, data.risco4, data.risco5];
-      if (valores.some(v => !v)) {
-        showAlert("Preencha todos os campos", "error");
-        return;
-      }
-
-      const total =
+      // Calcular totais
+      const total1 =
         Number(data.risco1) +
         Number(data.risco2) +
         Number(data.risco3) +
         Number(data.risco4) +
         Number(data.risco5);
 
-      data.total = total;
+      const total2 =
+        Number(data.risco6) +
+        Number(data.risco7) +
+        Number(data.risco8) +
+        Number(data.risco9) +
+        Number(data.risco10);
 
-      const submitBtn = document.querySelector('.btn-submit');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = "Enviando...";
-      submitBtn.disabled = true;
+      const total3 =
+        Number(data.risco11) +
+        Number(data.risco12) +
+        Number(data.risco13) +
+        Number(data.risco14) +
+        Number(data.risco15);
+
+      const total4 =
+        Number(data.risco16) +
+        Number(data.risco17) +
+        Number(data.risco18) +
+        Number(data.risco19) +
+        Number(data.risco20);
+
+      const total5 =
+        Number(data.risco21) +
+        Number(data.risco22) +
+        Number(data.risco23) +
+        Number(data.risco24) +
+        Number(data.risco25);
+
+      data.total1 = total1;
+      data.total2 = total2;
+      data.total3 = total3;
+      data.total4 = total4;
+      data.total5 = total5;
+
+      const modal = document.getElementById('loadingModal');
+      modal.classList.add('active');
 
       try {
-        await fetch(url, {
+        const formDataToSend = new URLSearchParams();
+        for (const key in data) {
+          formDataToSend.append(key, data[key]);
+        }
+
+        const response = await fetch(url, {
           method: "POST",
           mode: "no-cors",
-          body: JSON.stringify(data)
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          body: formDataToSend
         });
 
-        showAlert("Enviado com sucesso", "success");
+        const modalText = document.querySelector('.modal-text');
+        modalText.textContent = `Enviado com sucesso, ${data.nome}!`;
+        
+        setTimeout(() => {
+          modal.classList.remove('active');
+          modalText.textContent = 'Enviando...';
+        }, 3000);
+        
         this.reset();
+        goToStep(1);
 
       } catch (error) {
+        modal.classList.remove('active');
         showAlert("Erro ao enviar", "error");
-      } finally {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
       }
     });
 
