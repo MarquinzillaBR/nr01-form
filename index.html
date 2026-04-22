@@ -2,94 +2,145 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>NR-01</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NR-01 - Questionário 1</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="container">
+    <div class="form-card">
+      <div class="header">
+        <h1>Questionário de Riscos Psicossociais</h1>
+      </div>
 
-<h2>Questionário NR-01</h2>
+      <form id="form">
+        <div class="question-item">
+          <label class="question-label">A carga de trabalho que você enfrenta no seu dia-a-dia é excessiva?</label>
+          <select name="risco1" required>
+            <option value="">Selecione</option>
+            <option value="1">Nunca</option>
+            <option value="2">Raramente</option>
+            <option value="3">Às vezes</option>
+            <option value="4">Frequentemente</option>
+            <option value="5">Sempre</option>
+          </select>
+        </div>
 
-<form id="form">
-  <select name="risco1" required>
-    <option value="">Carga de trabalho</option>
-    <option value="1">Nunca</option>
-    <option value="2">Raramente</option>
-    <option value="3">Às vezes</option>
-    <option value="4">Frequentemente</option>
-    <option value="5">Sempre</option>
-  </select><br><br>
+        <div class="question-item">
+          <label class="question-label">Você sente que tem autonomia suficiente para tomar decisões no seu trabalho?</label>
+          <select name="risco2" required>
+            <option value="">Selecione</option>
+            <option value="1">Nunca</option>
+            <option value="2">Raramente</option>
+            <option value="3">Às vezes</option>
+            <option value="4">Frequentemente</option>
+            <option value="5">Sempre</option>
+          </select>
+        </div>
 
-  <select name="risco2" required>
-    <option value="">Autonomia</option>
-    <option value="1">Nunca</option>
-    <option value="2">Raramente</option>
-    <option value="3">Às vezes</option>
-    <option value="4">Frequentemente</option>
-    <option value="5">Sempre</option>
-  </select><br><br>
+        <div class="question-item">
+          <label class="question-label">Você sente que pode contar com os colegas e supervisores quando precisa de apoio?</label>
+          <select name="risco3" required>
+            <option value="">Selecione</option>
+            <option value="1">Nunca</option>
+            <option value="2">Raramente</option>
+            <option value="3">Às vezes</option>
+            <option value="4">Frequentemente</option>
+            <option value="5">Sempre</option>
+          </select>
+        </div>
 
-  <select name="risco3" required>
-    <option value="">Suporte</option>
-    <option value="1">Nunca</option>
-    <option value="2">Raramente</option>
-    <option value="3">Às vezes</option>
-    <option value="4">Frequentemente</option>
-    <option value="5">Sempre</option>
-  </select><br><br>
+        <div class="question-item">
+          <label class="question-label">Existe um clima de respeito e colaboração entre você e seus colegas de trabalho?</label>
+          <select name="risco4" required>
+            <option value="">Selecione</option>
+            <option value="1">Nunca</option>
+            <option value="2">Raramente</option>
+            <option value="3">Às vezes</option>
+            <option value="4">Frequentemente</option>
+            <option value="5">Sempre</option>
+          </select>
+        </div>
 
-  <select name="risco4" required>
-    <option value="">Relacionamento</option>
-    <option value="1">Nunca</option>
-    <option value="2">Raramente</option>
-    <option value="3">Às vezes</option>
-    <option value="4">Frequentemente</option>
-    <option value="5">Sempre</option>
-  </select><br><br>
+        <div class="question-item">
+          <label class="question-label">Você sente que seu esforço e desempenho são reconhecidos adequadamente?</label>
+          <select name="risco5" required>
+            <option value="">Selecione</option>
+            <option value="1">Nunca</option>
+            <option value="2">Raramente</option>
+            <option value="3">Às vezes</option>
+            <option value="4">Frequentemente</option>
+            <option value="5">Sempre</option>
+          </select>
+        </div>
 
-  <select name="risco5" required>
-    <option value="">Reconhecimento</option>
-    <option value="1">Nunca</option>
-    <option value="2">Raramente</option>
-    <option value="3">Às vezes</option>
-    <option value="4">Frequentemente</option>
-    <option value="5">Sempre</option>
-  </select><br><br>
+        <button type="submit" class="btn-submit">Enviar</button>
+      </form>
 
-  <button type="submit">Enviar</button>
-</form>
+      <div class="footer">
+        NR-01 - Disposições Gerais e Gerenciamento de Riscos Ocupacionais
+      </div>
+    </div>
+  </div>
 
-<script>
-const url = "https://script.google.com/macros/s/AKfycbwJAd45_c9b4PNJ8ErkpuYkc3WLQH-Xk0aMK2m6oab9mkLd01F9g7M-UwXQWInxlXy9Aw/exec";
+  <script>
+    const url = "https://script.google.com/macros/s/AKfycbwJAd45_c9b4PNJ8ErkpuYkc3WLQH-Xk0aMK2m6oab9mkLd01F9g7M-UwXQWInxlXy9Aw/exec";
 
-document.getElementById("form").addEventListener("submit", async function(e) {
-  e.preventDefault();
+    document.getElementById("form").addEventListener("submit", async function(e) {
+      e.preventDefault();
 
-  const formData = new FormData(this);
-  const data = Object.fromEntries(formData.entries());
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
 
-  const total =
-    Number(data.risco1) +
-    Number(data.risco2) +
-    Number(data.risco3) +
-    Number(data.risco4) +
-    Number(data.risco5);
+      const valores = [data.risco1, data.risco2, data.risco3, data.risco4, data.risco5];
+      if (valores.some(v => !v)) {
+        showAlert("Preencha todos os campos", "error");
+        return;
+      }
 
-  data.total = total;
+      const total =
+        Number(data.risco1) +
+        Number(data.risco2) +
+        Number(data.risco3) +
+        Number(data.risco4) +
+        Number(data.risco5);
 
-  try {
-    await fetch(url, {
-      method: "POST",
-      body: JSON.stringify(data)
+      data.total = total;
+
+      const submitBtn = document.querySelector('.btn-submit');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = "Enviando...";
+      submitBtn.disabled = true;
+
+      try {
+        await fetch(url, {
+          method: "POST",
+          mode: "no-cors",
+          body: JSON.stringify(data)
+        });
+
+        showAlert("Enviado com sucesso", "success");
+        this.reset();
+
+      } catch (error) {
+        showAlert("Erro ao enviar", "error");
+      } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
     });
 
-    alert("Enviado com sucesso!");
-    this.reset();
+    function showAlert(message, type) {
+      const existingAlert = document.querySelector('.alert');
+      if (existingAlert) existingAlert.remove();
 
-  } catch (error) {
-    alert("Erro ao enviar");
-    console.error(error);
-  }
-});
-</script>
+      const alertDiv = document.createElement('div');
+      alertDiv.className = `alert alert-${type}`;
+      alertDiv.textContent = message;
+      document.body.appendChild(alertDiv);
 
+      setTimeout(() => alertDiv.remove(), 3000);
+    }
+  </script>
 </body>
 </html>
