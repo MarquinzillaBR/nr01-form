@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>NR-01</title>
+</head>
+<body>
+
+<h2>Questionário NR-01</h2>
+
+<form id="form">
+  <select name="risco1" required>
+    <option value="">Carga de trabalho</option>
+    <option value="1">Nunca</option>
+    <option value="2">Raramente</option>
+    <option value="3">Às vezes</option>
+    <option value="4">Frequentemente</option>
+    <option value="5">Sempre</option>
+  </select><br><br>
+
+  <select name="risco2" required>
+    <option value="">Autonomia</option>
+    <option value="1">Nunca</option>
+    <option value="2">Raramente</option>
+    <option value="3">Às vezes</option>
+    <option value="4">Frequentemente</option>
+    <option value="5">Sempre</option>
+  </select><br><br>
+
+  <select name="risco3" required>
+    <option value="">Suporte</option>
+    <option value="1">Nunca</option>
+    <option value="2">Raramente</option>
+    <option value="3">Às vezes</option>
+    <option value="4">Frequentemente</option>
+    <option value="5">Sempre</option>
+  </select><br><br>
+
+  <select name="risco4" required>
+    <option value="">Relacionamento</option>
+    <option value="1">Nunca</option>
+    <option value="2">Raramente</option>
+    <option value="3">Às vezes</option>
+    <option value="4">Frequentemente</option>
+    <option value="5">Sempre</option>
+  </select><br><br>
+
+  <select name="risco5" required>
+    <option value="">Reconhecimento</option>
+    <option value="1">Nunca</option>
+    <option value="2">Raramente</option>
+    <option value="3">Às vezes</option>
+    <option value="4">Frequentemente</option>
+    <option value="5">Sempre</option>
+  </select><br><br>
+
+  <button type="submit">Enviar</button>
+</form>
+
+<script>
+const url = "https://script.google.com/macros/s/AKfycbwu2eduvxp8oVETZ-Isnjrr3jh6mHRQfQGRJzuhoIfKxHxbufadKLQ_dxHi0kvnL3dkPw/exec";
+
+document.getElementById("form").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
+
+  const total =
+    Number(data.risco1) +
+    Number(data.risco2) +
+    Number(data.risco3) +
+    Number(data.risco4) +
+    Number(data.risco5);
+
+  data.total = total;
+
+  try {
+    await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+
+    alert("Enviado com sucesso!");
+    this.reset();
+
+  } catch (error) {
+    alert("Erro ao enviar");
+    console.error(error);
+  }
+});
+</script>
+
+</body>
+</html>
