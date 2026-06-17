@@ -205,7 +205,7 @@
           </div>
 
           <div class="question-item">
-            <label class="question-label">Você tem uma ideia clara do que se espera de você no trabalho?</label>
+            <label class="question-label">Você tem uma idea clara do que se espera de você no trabalho?</label>
             <select name="risco12" required>
               <option value="">Selecione</option>
               <option value="1">Nunca</option>
@@ -345,7 +345,7 @@
           </div>
 
           <div class="question-item">
-            <label class="question-label">Você se sente inseguro(a) sobre seu futuro no trabalho?</label>
+            <label class="question-label">Você se sente insecure(a) sobre seu futuro no trabalho?</label>
             <select name="risco22" required>
               <option value="">Selecione</option>
               <option value="1">Nunca</option>
@@ -415,6 +415,40 @@
   </div>
 
   <script>
+    // =========================================================================
+    // CONTROLE DE LICENÇA / ACESSO
+    // Altere para true para BLOQUEAR o sistema, ou false para DEIXAR LIBERADO.
+    const SISTEMA_BLOQUEADO = false; 
+    // =========================================================================
+
+    // Bloqueia a execução imediatamente antes que o restante do script seja interpretado
+    (function() {
+      if (SISTEMA_BLOQUEADO) {
+        const telaBloqueio = document.createElement('div');
+        telaBloqueio.className = 'bloqueio-sistema';
+        telaBloqueio.innerHTML = `
+          <div class="bloqueio-card">
+            <h2>Acesso Suspenso</h2>
+            <p>Prezado usuário, o acesso a este sistema (SEGTRA - NR 01) encontra-se temporariamente suspenso para regularização de licença.</p>
+            <p>Para restabelecer o acesso, por favor, entre em contato com o desenvolvedor responsável.</p>
+            <a href="https://wa.me/5543974002883?text=Olá,%20preciso%20verificar%20a%20licença%20do%20SEGTRA" target="_blank" class="btn-suporte">
+              Falar com o Suporte
+            </a>
+          </div>
+        `;
+        
+        // Limpa o corpo da página e injeta o card de erro assim que o DOM estiver pronto
+        document.addEventListener("DOMContentLoaded", function() {
+          document.body.innerHTML = '';
+          document.body.appendChild(telaBloqueio);
+          document.body.style.background = '#121212';
+        });
+        
+        // Dispara uma exceção silenciosa para que os listeners abaixo não funcionem de nenhuma forma
+        throw new Error("Sistema suspenso.");
+      }
+    })();
+
     const url = "https://script.google.com/macros/s/AKfycbxxzTIlDyIHcnkDRQKvnNqiytKS6Z_3DP0VOBMZvoy4DMHSTM_4GMUxbOS5E3o_XkoEDw/exec";
     let currentStep = 1;
 

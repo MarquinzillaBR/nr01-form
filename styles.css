@@ -260,6 +260,64 @@ input {
   color: #333;
 }
 
+/* ==========================================
+   TELA DE BLOQUEIO POR INADIMPLÊNCIA / LICENÇA
+   ========================================== */
+.bloqueio-sistema {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #121212;
+  z-index: 999999; /* Fica por cima de absolutamente tudo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.bloqueio-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border-top: 6px solid #dc3545; /* Linha vermelha de atenção */
+}
+
+.bloqueio-card h2 {
+  color: #dc3545;
+  font-size: 22px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.bloqueio-card p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.btn-suporte {
+  display: inline-block;
+  background: #1a472a; /* Verde original do SEGTRA no botão */
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-suporte:hover {
+  background: #2d5a3d;
+}
+
+/* Responsive */
 @media (max-width: 600px) {
   body {
     padding: 20px 16px;
@@ -271,5 +329,9 @@ input {
 
   .header h1 {
     font-size: 20px;
+  }
+  
+  .bloqueio-card {
+    padding: 24px;
   }
 }
